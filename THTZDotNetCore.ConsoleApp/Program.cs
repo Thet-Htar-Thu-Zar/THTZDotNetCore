@@ -28,7 +28,7 @@ EFCoreExample eFCoreExample = new EFCoreExample();
 //eFCoreExample.Read();
 //eFCoreExample.Create("Real", "Chaw", "C#");
 //eFCoreExample.Edit(1);
-//eFCoreExample.Update(1,"Real", "Thet", "C#");
-//eFCoreExample.Delete(3);
+//eFCoreExample.Update(1, "Real", "Thet", "C#");
+eFCoreExample.Delete(3);
 
 Console.ReadKey();
