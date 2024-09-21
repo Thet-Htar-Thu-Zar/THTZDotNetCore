@@ -22,5 +22,6 @@ DapperExample dapper = new DapperExample();
 //dapper.Create("Real", "Chaw", "C#");
 //dapper.Edit(1);
 //dapper.Update(1, "Real", "Thet", "C#");
+dapper.Delete(3);
 
 Console.ReadKey();
