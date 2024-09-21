@@ -17,11 +17,18 @@ using THTZDotNetCore.ConsoleApp;
 //adoDotNet.Update();
 //adoDotNet.Delete();
 
-DapperExample dapper = new DapperExample();
+//DapperExample dapper = new DapperExample();
 //dapper.Read();
 //dapper.Create("Real", "Chaw", "C#");
 //dapper.Edit(1);
 //dapper.Update(1, "Real", "Thet", "C#");
-dapper.Delete(3);
+//dapper.Delete(3);
+
+EFCoreExample eFCoreExample = new EFCoreExample();
+//eFCoreExample.Read();
+//eFCoreExample.Create("Real", "Chaw", "C#");
+//eFCoreExample.Edit(1);
+//eFCoreExample.Update(1,"Real", "Thet", "C#");
+//eFCoreExample.Delete(3);
 
 Console.ReadKey();
