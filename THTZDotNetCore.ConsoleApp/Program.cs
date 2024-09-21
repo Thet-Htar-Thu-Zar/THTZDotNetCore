@@ -10,13 +10,17 @@ using THTZDotNetCore.ConsoleApp;
 //md => markdown
 
 
-AdoDotNet adoDotNet = new AdoDotNet();
+//AdoDotNet adoDotNet = new AdoDotNet();
 //adoDotNet.Read();
 //adoDotNet.Create();
 //adoDotNet.Edit();
 //adoDotNet.Update();
-adoDotNet.Delete();
+//adoDotNet.Delete();
 
-
+DapperExample dapper = new DapperExample();
+//dapper.Read();
+//dapper.Create("Real", "Chaw", "C#");
+//dapper.Edit(1);
+//dapper.Update(1, "Real", "Thet", "C#");
 
 Console.ReadKey();
