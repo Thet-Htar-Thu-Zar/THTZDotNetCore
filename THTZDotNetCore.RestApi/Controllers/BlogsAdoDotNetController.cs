@@ -208,10 +208,24 @@ namespace THTZDotNetCore.RestApi.Controllers
             return Ok(result > 0 ? "Updating Successful." : "Updating Fail.");
         }
 
-        //[HttpDelete("{id}")]
-        //public IActionResult DeleteBlog(int id)
-        //{
-           
-        //}
+        [HttpDelete("{id}")]
+        public IActionResult DeleteBlog(int id)
+        {
+            SqlConnection connection = new SqlConnection(_connectionString);
+            connection.Open();
+
+            string query = @"UPDATE [dbo].[Tbl_Blog]
+   SET [DeleteFlag] = 1
+    WHERE BlogId = @BlogId";
+
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@BlogId", id);
+
+            int result = cmd.ExecuteNonQuery();
+
+            connection.Close();
+
+            return Ok(result > 0 ? "Deleting Successful." : "Deleting Fail.");
+        }
     }
 }
