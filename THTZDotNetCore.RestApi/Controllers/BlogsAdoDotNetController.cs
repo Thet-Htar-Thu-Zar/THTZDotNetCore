@@ -99,12 +99,35 @@ namespace THTZDotNetCore.RestApi.Controllers
 
         }
 
-        //[HttpPost]
+        [HttpPost]
 
-        //public IActionResult CreateBlog(TblBlog blog)
-        //{
+        public IActionResult CreateBlog(BlogViewModel blog)
+        {
+            SqlConnection connection = new SqlConnection(_connectionString);
+            connection.Open();
 
-        //}
+            string query = $@"INSERT INTO [dbo].[Tbl_Blog]
+           ([BlogTitle]
+           ,[BlogAuthor]
+           ,[BlogContent]
+           ,[DeleteFlag])
+     VALUES
+            (@BlogTitle
+            ,@BlogAuthor
+            ,@BlogContent
+            ,0)";
+
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@BlogTitle", blog.Title);
+            cmd.Parameters.AddWithValue("@BlogAuthor", blog.Author);
+            cmd.Parameters.AddWithValue("@BlogContent", blog.Content);
+
+            int result = cmd.ExecuteNonQuery();
+
+            connection.Close();
+
+            return Ok(result > 0 ? "Creating Successful." : "Creating Fail.");
+        }
 
         //[HttpPut("{id}")]
 
