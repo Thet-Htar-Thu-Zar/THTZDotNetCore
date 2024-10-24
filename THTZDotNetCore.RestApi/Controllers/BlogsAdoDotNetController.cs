@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
 using System.Data;
-using THTZDotNetCore.Database.Models;
 using THTZDotNetCore.RestApi.ViewModel;
 
 namespace THTZDotNetCore.RestApi.Controllers
@@ -12,6 +10,7 @@ namespace THTZDotNetCore.RestApi.Controllers
     public class BlogsAdoDotNetController : ControllerBase
     {
         private readonly string _connectionString = "Data Source=.;Initial Catalog=THTZDotNetCore;User ID=sa;Password=sasa@123;TrustServerCertificate=True;";
+
         [HttpGet]
         public IActionResult GetBlogs()
         {
@@ -55,28 +54,66 @@ namespace THTZDotNetCore.RestApi.Controllers
            
         }
 
-        //[HttpGet("{id}")]
-        //public IActionResult GetBlog(int id)
-        //{
-           
-        //}
+        [HttpGet("{id}")]
+        public IActionResult GetBlog(int id)
+        {
+            List<BlogViewModel> lst = new List<BlogViewModel>();
+
+            SqlConnection connection = new SqlConnection(_connectionString);
+            connection.Open();
+
+            string query = @"SELECT [BlogId]
+      ,[BlogTitle]
+      ,[BlogAuthor]
+      ,[BlogContent]
+      ,[DeleteFlag]
+  FROM [dbo].[Tbl_Blog] where BlogId = @BlogId";
+
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@BlogId", id);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                Console.WriteLine(reader["BlogId"]);
+                Console.WriteLine(reader["BlogTitle"]);
+                Console.WriteLine(reader["BlogAuthor"]);
+                Console.WriteLine(reader["BlogContent"]);
+                lst.Add(new BlogViewModel
+                {
+                    Id = Convert.ToInt32(reader["BlogId"]),
+                    Title = Convert.ToString(reader["BlogTitle"]),
+                    Author = Convert.ToString(reader["BlogAuthor"]),
+                    Content = Convert.ToString(reader["BlogContent"]),
+                    DeleteFlag = Convert.ToBoolean(reader["DeleteFlag"]),
+
+                });
+            }
+
+            connection.Close();
+
+            return Ok(lst);
+
+        }
 
         //[HttpPost]
 
         //public IActionResult CreateBlog(TblBlog blog)
         //{
-            
+
         //}
 
         //[HttpPut("{id}")]
 
         //public IActionResult UpdateBlog(int id, TblBlog blog)
         //{
-            
+
         //}
 
         [HttpPatch("{id}")]
-
         public IActionResult PatchBlog(int id, BlogViewModel blog)
         {
             string conditions = "";
