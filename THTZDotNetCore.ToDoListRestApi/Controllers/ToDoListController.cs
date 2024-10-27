@@ -61,7 +61,7 @@ namespace THTZDotNetCore.ToDoListRestApi.Controllers
                     Status = list.Status,
                     CreatedDate = list.CreatedDate,
                     DueDate = list.DueDate,
-                    CompletedDate = list.CompletedDate,
+                    CompletedDate = list.CompletedDate
                 });
 
                 return Ok(result == 1 ? "ToDoList creating successful." : "ToDoList creating failed.");
@@ -116,7 +116,7 @@ namespace THTZDotNetCore.ToDoListRestApi.Controllers
                     Status = list.Status,
                     CreatedDate = list.CreatedDate,
                     DueDate = list.DueDate,
-                    CompletedDate = list.CompletedDate,
+                    CompletedDate = list.CompletedDate
                 });
 
                 return Ok(result == 1 ? "Updating Successful" : "Updating Fail.");
@@ -182,7 +182,7 @@ namespace THTZDotNetCore.ToDoListRestApi.Controllers
                     Status = list.Status,
                     CreatedDate = list.CreatedDate,
                     DueDate = list.DueDate,
-                    CompletedDate = list.CompletedDate,
+                    CompletedDate = list.CompletedDate
                 });
 
                 return Ok(result == 1 ? "Updating Successful" : "Updating Fail.");
