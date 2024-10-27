@@ -1,5 +1,4 @@
 ﻿using Dapper;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
 using System.Data.SqlClient;
@@ -15,11 +14,11 @@ namespace THTZDotNetCore.ToDoListRestApi.Controllers
         private readonly string _connectionString = "Data Source=.;Initial Catalog=THTZDotNetCore;User ID=sa;Password=sasa@123;TrustServerCertificate=True;";
 
         [HttpGet]
-        public IActionResult GetTaskCategory()
+        public IActionResult GetToDoList()
         {
             using (IDbConnection db = new SqlConnection(_connectionString))
             {
-                string query = "select * from tbl_taskCategory where DeleteFlag = 0;";
+                string query = "select * from tbl_todolist where DeleteFlag = 0;";
 
                 var lst = db.Query<TaskCategoryViewModel>(query).ToList();
 
@@ -28,37 +27,57 @@ namespace THTZDotNetCore.ToDoListRestApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateTaskCategory(TaskCategoryDataModel Task)
+        public IActionResult CreateToDoList(ToDoListDataModel list)
         {
-            string query = $@"INSERT INTO [dbo].[Tbl_TaskCategory]
-           ([TaskCategoryName]
-           ,[DeleteFlag])
+            string query = $@"INSERT INTO [dbo].[Tbl_ToDoList]
+           ([TaskName]
+           ,[TaskDescription]
+           ,[TaskCategoryId]
+           ,[PriorityLevel]
+           ,[Status]
+           ,[CreatedDate]
+           ,[DueDate]
+           ,[CompletedDate])
+            ,[DeleteFlag])
      VALUES
-            (@TaskCategoryName
+            (@TaskName
+            ,@TaskDescription
+            ,@TaskCategoryId
+            ,@PriorityLevel
+            ,@Status
+            ,@CreatedDate
+            ,@DueDate
+            ,@CompletedDate
             ,0)";
 
             using (IDbConnection db = new SqlConnection(_connectionString))
             {
-                int result = db.Execute(query, new TaskCategoryDataModel
+                int result = db.Execute(query, new ToDoListDataModel
                 {
-                    TaskCategoryId = Task.TaskCategoryId,
-                    TaskCategoryName = Task.TaskCategoryName,
+                    TaskName = list.TaskName,
+                    TaskDescription = list.TaskDescription,
+                    TaskCategoryId = list.TaskCategoryId,
+                    PriorityLevel = list.PriorityLevel,
+                    Status = list.Status,
+                    CreatedDate = list.CreatedDate,
+                    DueDate = list.DueDate,
+                    CompletedDate = list.CompletedDate,
                 });
 
-                return Ok(result == 1 ? "Category creating successful." : "Category creating failed.");
+                return Ok(result == 1 ? "ToDoList creating successful." : "ToDoList creating failed.");
             }
 
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetTaskCategoryById(int id)
+        public IActionResult GetToDoListById(int id)
         {
             using (IDbConnection db = new SqlConnection(_connectionString))
             {
-                string query = "select * from tbl_taskCategory where DeleteFlag = 0 and TaskCategoryId = @TaskCategoryId;";
-                var item = db.Query<TaskCategoryViewModel>(query, new TaskCategoryViewModel
+                string query = "select * from tbl_todolist where DeleteFlag = 0 and TaskId = @TaskId;";
+                var item = db.Query<ToDoListViewModel>(query, new ToDoListViewModel
                 {
-                    TaskCategoryId = id,
+                    TaskId = id,
                 }).FirstOrDefault();
 
                 if (item is null)
@@ -71,20 +90,33 @@ namespace THTZDotNetCore.ToDoListRestApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateTaskCategory(int id, TaskCategoryDataModel Task)
+        public IActionResult UpdateTaskCategory(int id, ToDoListDataModel list)
         {
 
-            string query = $@"UPDATE [dbo].[Tbl_TaskCategory]
-   SET [TaskCategoryName] = @TaskCategoryName
-      ,[DeleteFlag] = 0
- WHERE TaskCategoryId = @TaskCategoryId ";
+            string query = $@"UPDATE [dbo].[Tbl_ToDoList]
+   SET [TaskName] = @TaskName
+      ,[TaskDescription] = @TaskDescription
+      ,[TaskCategoryId] = @TaskCategoryId
+      ,[PriorityLevel] = @PriorityLevel
+      ,[Status] = @Status
+      ,[CreatedDate] = @CreatedDate
+      ,[DueDate] = @DueDate
+      ,[CompletedDate] = @CompletedDate
+ WHERE TaskId = @TaskId ";
 
             using (IDbConnection db = new SqlConnection(_connectionString))
             {
-                int result = db.Execute(query, new TaskCategoryDataModel
+                int result = db.Execute(query, new ToDoListDataModel
                 {
-                    TaskCategoryId = id,
-                    TaskCategoryName = Task.TaskCategoryName,
+                    TaskId = id,
+                    TaskName = list.TaskName,
+                    TaskDescription = list.TaskDescription,
+                    TaskCategoryId = list.TaskCategoryId,
+                    PriorityLevel = list.PriorityLevel,
+                    Status = list.Status,
+                    CreatedDate = list.CreatedDate,
+                    DueDate = list.DueDate,
+                    CompletedDate = list.CompletedDate,
                 });
 
                 return Ok(result == 1 ? "Updating Successful" : "Updating Fail.");
@@ -92,13 +124,41 @@ namespace THTZDotNetCore.ToDoListRestApi.Controllers
         }
 
         [HttpPatch("{id}")]
-        public IActionResult PatchTaskCategory(int id, TaskCategoryViewModel Task)
+        public IActionResult PatchToDoList(int id, ToDoListViewModel list)
         {
             string conditions = "";
 
-            if (!string.IsNullOrEmpty(Task.TaskCategoryName))
+            if (!string.IsNullOrEmpty(list.TaskName))
             {
-                conditions += "[TaskCategoryName] = @TaskCategoryName, ";
+                conditions += "[TaskName] = @TaskName, ";
+            }
+            if (!string.IsNullOrEmpty(list.TaskDescription))
+            {
+                conditions += "[TaskDescription] = @TaskDescription, ";
+            }
+            if (0 != list.TaskCategoryId)
+            {
+                conditions += "[TaskCategoryId] = @TaskCategoryId, ";
+            }
+            if (0 != list.PriorityLevel)
+            {
+                conditions += "[PriorityLevel] = @PriorityLevel, ";
+            }
+            if (!string.IsNullOrEmpty(list.Status))
+            {
+                conditions += "[Status] = @Status, ";
+            }
+            if (null != (list.CreatedDate))
+            {
+                conditions += "[CreatedDate] = @CreatedDate, ";
+            }
+            if (null != (list.DueDate))
+            {
+                conditions += "[DueDate] = @DueDate, ";
+            }
+            if (null != (list.CompletedDate))
+            {
+                conditions += "[CompletedDate] = @CompletedDate, ";
             }
 
             if (conditions.Length == 0)
@@ -110,12 +170,19 @@ namespace THTZDotNetCore.ToDoListRestApi.Controllers
 
             using (IDbConnection db = new SqlConnection(_connectionString))
             {
-                string query = $@"UPDATE [dbo].[Tbl_TaskCategory] SET {conditions}
-, [DeleteFlag] = 0 WHERE TaskCategoryId = @TaskCategoryId";
-                int result = db.Execute(query, new TaskCategoryViewModel
+                string query = $@"UPDATE [dbo].[Tbl_ToDoList] SET {conditions}
+, [DeleteFlag] = 0 WHERE TaskId = @TaskId";
+                int result = db.Execute(query, new ToDoListViewModel
                 {
-                    TaskCategoryId = id,
-                    TaskCategoryName = Task.TaskCategoryName,
+                    TaskId = id,
+                    TaskName = list.TaskName,
+                    TaskDescription = list.TaskDescription,
+                    TaskCategoryId = list.TaskCategoryId,
+                    PriorityLevel = list.PriorityLevel,
+                    Status = list.Status,
+                    CreatedDate = list.CreatedDate,
+                    DueDate = list.DueDate,
+                    CompletedDate = list.CompletedDate,
                 });
 
                 return Ok(result == 1 ? "Updating Successful" : "Updating Fail.");
@@ -124,17 +191,17 @@ namespace THTZDotNetCore.ToDoListRestApi.Controllers
         }
 
         [HttpDelete]
-        public IActionResult DeleteTaskCategory(int id)
+        public IActionResult DeleteToDoList(int id)
         {
-            string query = @"UPDATE [dbo].[Tbl_TaskCategory]
+            string query = @"UPDATE [dbo].[Tbl_ToDoList]
    SET [DeleteFlag] = 1
-    WHERE TaskCategoryId = @TaskCategoryId";
+    WHERE TaskId = @TaskId";
 
             using (IDbConnection db = new SqlConnection(_connectionString))
             {
-                int result = db.Execute(query, new TaskCategoryDataModel
+                int result = db.Execute(query, new ToDoListDataModel
                 {
-                    TaskCategoryId = id,
+                    TaskId = id,
 
                 });
 
