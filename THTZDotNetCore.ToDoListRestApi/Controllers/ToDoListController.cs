@@ -20,7 +20,7 @@ namespace THTZDotNetCore.ToDoListRestApi.Controllers
             {
                 string query = "select * from tbl_todolist where DeleteFlag = 0;";
 
-                var lst = db.Query<TaskCategoryViewModel>(query).ToList();
+                var lst = db.Query<ToDoListViewModel>(query).ToList();
 
                 return Ok(lst);
             }
