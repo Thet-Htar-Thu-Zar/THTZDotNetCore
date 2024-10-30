@@ -66,7 +66,6 @@ namespace THTZDotNetCore.ToDoListRestApi.Controllers
 
                 return Ok(result == 1 ? "ToDoList creating successful." : "ToDoList creating failed.");
             }
-
         }
 
         [HttpGet("{id}")]
