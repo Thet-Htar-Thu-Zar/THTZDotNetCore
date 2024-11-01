@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
@@ -93,6 +94,21 @@ namespace THTZDotNetCore.ConsoleApp
                 BlogContent = content,
             });
             Console.WriteLine(result == 1 ? "Updating Successful" : "Updating Fail.");
+        }
+
+        public void Delete(int id)
+        {
+            string query = @"UPDATE [dbo].[Tbl_Blog]
+   SET [DeleteFlag] = 1
+    WHERE BlogId = @BlogId";
+
+                int result = _dapperService.Execute(query, new BlogDapperDataModel
+                {
+                    BlogId = id,
+
+                });
+                Console.WriteLine(result == 1 ? "Deleting Successful" : "Deleting Fail.");
+            
         }
     }
 }
