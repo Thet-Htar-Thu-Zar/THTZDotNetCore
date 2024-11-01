@@ -34,9 +34,9 @@ using THTZDotNetCore.ConsoleApp;
 DapperExample2 dapper = new DapperExample2();
 //dapper.Read();
 //dapper.Create("Imagine", "Chaw", "Java");
-dapper.Edit(1);
-//dapper.Update(1, "Real", "Thet", "C#");
-//dapper.Delete(3);
+//dapper.Edit(2);
+//dapper.Update(1, "Rial", "Thet", "C#");
+dapper.Delete(2);
 
 
 //EFCoreExample eFCoreExample = new EFCoreExample();
