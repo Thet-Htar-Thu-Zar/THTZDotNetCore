@@ -18,7 +18,11 @@ using THTZDotNetCore.ConsoleApp;
 //adoDotNet.Delete();
 
 AdoDotNet2 adoDotNet = new AdoDotNet2();
-adoDotNet.Read();
+//adoDotNet.Read();
+//adoDotNet.Edit();
+//adoDotNet.Create();
+adoDotNet.Update();
+
 
 //DapperExample dapper = new DapperExample();
 //dapper.Read();
