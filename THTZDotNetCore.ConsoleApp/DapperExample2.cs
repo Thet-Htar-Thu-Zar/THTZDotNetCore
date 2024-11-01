@@ -56,6 +56,23 @@ namespace THTZDotNetCore.ConsoleApp
             Console.WriteLine(result == 1 ? "Saving Successful" : "Saving Fail.");
         }
 
-        
+        public void Edit(int id)
+        {
+            string query = "select * from tbl_blog where DeleteFlag = 0 and BlogId = @BlogId;";
+            var item = _dapperService.Query<BlogDapperDataModel>(query, new BlogDapperDataModel
+            {
+                BlogId = id
+            }).FirstOrDefault();
+
+            if (item is null)
+            {
+                Console.WriteLine("No data found");
+                return;
+            }
+            Console.WriteLine(item.BlogId);
+            Console.WriteLine(item.BlogTitle);
+            Console.WriteLine(item.BlogAuthor);
+            Console.WriteLine(item.BlogContent);
+        }
     }
 }
