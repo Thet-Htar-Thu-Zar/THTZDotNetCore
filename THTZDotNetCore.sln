@@ -16,7 +16,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THTZDotNetCore.ConsoleApp2"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THTZDotNetCore.RestApi", "THTZDotNetCore.RestApi\THTZDotNetCore.RestApi.csproj", "{793378F0-18CE-4CDC-8B19-FEF08CCCB89E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "THTZDotNetCore.ToDoListRestApi", "THTZDotNetCore.ToDoListRestApi\THTZDotNetCore.ToDoListRestApi.csproj", "{D6A1D6AA-799E-4B89-A7DE-272944BE6E94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THTZDotNetCore.ToDoListRestApi", "THTZDotNetCore.ToDoListRestApi\THTZDotNetCore.ToDoListRestApi.csproj", "{D6A1D6AA-799E-4B89-A7DE-272944BE6E94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "THTZDotNetCore.Shared", "THTZDotNetCore.Shared\THTZDotNetCore.Shared.csproj", "{022597F2-8E04-4284-BCF2-66662353CA47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +46,10 @@ Global
 		{D6A1D6AA-799E-4B89-A7DE-272944BE6E94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6A1D6AA-799E-4B89-A7DE-272944BE6E94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6A1D6AA-799E-4B89-A7DE-272944BE6E94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{022597F2-8E04-4284-BCF2-66662353CA47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{022597F2-8E04-4284-BCF2-66662353CA47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{022597F2-8E04-4284-BCF2-66662353CA47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{022597F2-8E04-4284-BCF2-66662353CA47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

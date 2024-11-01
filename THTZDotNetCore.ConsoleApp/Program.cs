@@ -17,6 +17,9 @@ using THTZDotNetCore.ConsoleApp;
 //adoDotNet.Update();
 //adoDotNet.Delete();
 
+AdoDotNet2 adoDotNet = new AdoDotNet2();
+adoDotNet.Read();
+
 //DapperExample dapper = new DapperExample();
 //dapper.Read();
 //dapper.Create("Real", "Chaw", "C#");
@@ -24,11 +27,11 @@ using THTZDotNetCore.ConsoleApp;
 //dapper.Update(1, "Real", "Thet", "C#");
 //dapper.Delete(3);
 
-EFCoreExample eFCoreExample = new EFCoreExample();
+//EFCoreExample eFCoreExample = new EFCoreExample();
 //eFCoreExample.Read();
 //eFCoreExample.Create("Real", "Chaw", "C#");
 //eFCoreExample.Edit(1);
 //eFCoreExample.Update(1, "Real", "Thet", "C#");
-eFCoreExample.Delete(3);
+//eFCoreExample.Delete(3);
 
 Console.ReadKey();
