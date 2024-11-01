@@ -18,7 +18,17 @@ namespace THTZDotNetCore.ToDoListRestApi.Controllers
         {
             using (IDbConnection db = new SqlConnection(_connectionString))
             {
-                string query = "select * from tbl_todolist where DeleteFlag = 0;";
+                string query = @"SELECT [TaskId]
+      ,[TaskName]
+      ,[TaskDescription]
+      ,[TaskCategoryId]
+      ,[PriorityLevel]
+      ,[Status]
+      ,[CreatedDate]
+      ,[DueDate]
+      ,[CompletedDate]
+      ,[DeleteFlag]
+  FROM [dbo].[Tbl_ToDoList] where DeleteFlag = 0;";
 
                 var lst = db.Query<ToDoListViewModel>(query).ToList();
 
@@ -37,7 +47,7 @@ namespace THTZDotNetCore.ToDoListRestApi.Controllers
            ,[Status]
            ,[CreatedDate]
            ,[DueDate]
-           ,[CompletedDate])
+           ,[CompletedDate]
             ,[DeleteFlag])
      VALUES
             (@TaskName
