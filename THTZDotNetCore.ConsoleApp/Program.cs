@@ -17,13 +17,12 @@ using THTZDotNetCore.ConsoleApp;
 //adoDotNet.Update();
 //adoDotNet.Delete();
 
-AdoDotNet2 adoDotNet = new AdoDotNet2();
+//AdoDotNet2 adoDotNet = new AdoDotNet2();
 //adoDotNet.Read();
 //adoDotNet.Edit();
 //adoDotNet.Create();
 //adoDotNet.Update();
-adoDotNet.Delete();
-
+//adoDotNet.Delete();
 
 //DapperExample dapper = new DapperExample();
 //dapper.Read();
@@ -31,6 +30,14 @@ adoDotNet.Delete();
 //dapper.Edit(1);
 //dapper.Update(1, "Real", "Thet", "C#");
 //dapper.Delete(3);
+
+DapperExample2 dapper = new DapperExample2();
+//dapper.Read();
+//dapper.Create("Imagine", "Chaw", "Java");
+dapper.Edit(1);
+//dapper.Update(1, "Real", "Thet", "C#");
+//dapper.Delete(3);
+
 
 //EFCoreExample eFCoreExample = new EFCoreExample();
 //eFCoreExample.Read();
