@@ -59,7 +59,7 @@ namespace THTZDotNetCore.ConsoleApp
             Console.WriteLine(dr["BlogContent"]);
         }
 
-        public void Create() 
+        public void Create()
         {
             Console.WriteLine("Blog Title: ");
             string title = Console.ReadLine();
@@ -111,7 +111,7 @@ namespace THTZDotNetCore.ConsoleApp
       ,[DeleteFlag] = 0
  WHERE BlogId = @BlogId";
 
-           
+
             int result = _adoDotNetService.Execute(query,
                 new SqlParameterModel("@BlogId", id),
                 new SqlParameterModel("@BlogTitle", title),

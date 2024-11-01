@@ -1,7 +1,7 @@
 ﻿using Dapper;
 using System.Data;
 using System.Data.SqlClient;
-using THTZDotNetCore.ConsoleApp.Models;
+using THTZDotNetCore.ConsoleApp.Model;
 
 namespace THTZDotNetCore.ConsoleApp
 {

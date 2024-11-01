@@ -1,7 +1,6 @@
-﻿using System.Data.SqlClient;
-using System.Data;
-using THTZDotNetCore.ConsoleApp.Models;
+﻿using System.Data;
 using Microsoft.EntityFrameworkCore;
+using THTZDotNetCore.ConsoleApp.Model;
 
 namespace THTZDotNetCore.ConsoleApp
 {
@@ -101,6 +100,6 @@ namespace THTZDotNetCore.ConsoleApp
 
             Console.WriteLine(result == 1 ? "Deleting Successful" : "Deleting Fail.");
         }
-        
+
     }
 }

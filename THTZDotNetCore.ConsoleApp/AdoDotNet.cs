@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Collections;
 
 namespace THTZDotNetCore.ConsoleApp
 {
     public class AdoDotNet
     {
         private readonly string _connectionString = "Data Source=.;Initial Catalog=THTZDotNetCore;User ID=sa;Password=sasa@123;";
-        
+
         public void Read()
         {
             Console.WriteLine("Connection string: " + _connectionString);
@@ -43,7 +37,7 @@ namespace THTZDotNetCore.ConsoleApp
                 Console.WriteLine(reader["BlogContent"]);
             }
 
-       
+
 
             foreach (DataRow dr in dt.Rows)
             {
@@ -110,7 +104,7 @@ namespace THTZDotNetCore.ConsoleApp
             connection.Close();
 
             Console.WriteLine(result == 1 ? "Saving Successful." : "Saving Fail.");
-            
+
         }
 
         public void Edit()
@@ -136,7 +130,7 @@ namespace THTZDotNetCore.ConsoleApp
 
             connection.Close();
 
-            if(dt.Rows.Count == 0)
+            if (dt.Rows.Count == 0)
             {
                 Console.WriteLine("No data found");
                 return;
@@ -206,7 +200,7 @@ namespace THTZDotNetCore.ConsoleApp
 
             connection.Close();
 
-            if(result == 0)
+            if (result == 0)
             {
                 Console.WriteLine("Deleting Fail.");
             }

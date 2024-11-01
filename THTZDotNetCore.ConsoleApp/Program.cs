@@ -17,16 +17,16 @@ using THTZDotNetCore.ConsoleApp;
 //adoDotNet.Update();
 //adoDotNet.Delete();
 
-//AdoDotNet2 adoDotNet = new AdoDotNet2();
+AdoDotNet2 adoDotNet = new AdoDotNet2();
 //adoDotNet.Read();
 //adoDotNet.Edit();
 //adoDotNet.Create();
 //adoDotNet.Update();
-//adoDotNet.Delete();
+adoDotNet.Delete();
 
 
-DapperExample dapper = new DapperExample();
-dapper.Read();
+//DapperExample dapper = new DapperExample();
+//dapper.Read();
 //dapper.Create("Real", "Chaw", "C#");
 //dapper.Edit(1);
 //dapper.Update(1, "Real", "Thet", "C#");
