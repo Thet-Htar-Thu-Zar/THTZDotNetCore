@@ -82,7 +82,7 @@ namespace THTZDotNetCore.ConsoleApp
             ,0)
             ";
 
-            int result = _adoDotNetService.Excute(query,
+            int result = _adoDotNetService.Execute(query,
                 new SqlParameterModel("@BlogTitle", title),
                 new SqlParameterModel("@BlogAuthor", author),
                 new SqlParameterModel("@BlogContent", content));
@@ -112,7 +112,7 @@ namespace THTZDotNetCore.ConsoleApp
  WHERE BlogId = @BlogId";
 
            
-            int result = _adoDotNetService.Excute(query,
+            int result = _adoDotNetService.Execute(query,
                 new SqlParameterModel("@BlogId", id),
                 new SqlParameterModel("@BlogTitle", title),
                 new SqlParameterModel("@BlogAuthor", author),
@@ -131,7 +131,7 @@ namespace THTZDotNetCore.ConsoleApp
    SET [DeleteFlag] = 1
     WHERE BlogId = @BlogId";
 
-            int result = _adoDotNetService.Excute(query,
+            int result = _adoDotNetService.Execute(query,
                 new SqlParameterModel("@BlogId", id));
 
             if (result == 0)
@@ -142,6 +142,7 @@ namespace THTZDotNetCore.ConsoleApp
             {
                 Console.WriteLine("Deleting Success.");
             }
+
         }
     }
 }

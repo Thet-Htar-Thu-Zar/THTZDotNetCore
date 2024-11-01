@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THTZDotNetCore.ConsoleApp", "THTZDotNetCore.ConsoleApp\THTZDotNetCore.ConsoleApp.csproj", "{DDC97CEE-EAD2-46BA-A90E-F1040CF28ACD}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{4D303629-AA25-4600-A30C-7CD01655D3DC}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
@@ -18,7 +16,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THTZDotNetCore.RestApi", "T
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THTZDotNetCore.ToDoListRestApi", "THTZDotNetCore.ToDoListRestApi\THTZDotNetCore.ToDoListRestApi.csproj", "{D6A1D6AA-799E-4B89-A7DE-272944BE6E94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "THTZDotNetCore.Shared", "THTZDotNetCore.Shared\THTZDotNetCore.Shared.csproj", "{022597F2-8E04-4284-BCF2-66662353CA47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THTZDotNetCore.Shared", "THTZDotNetCore.Shared\THTZDotNetCore.Shared.csproj", "{022597F2-8E04-4284-BCF2-66662353CA47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,10 +24,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DDC97CEE-EAD2-46BA-A90E-F1040CF28ACD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DDC97CEE-EAD2-46BA-A90E-F1040CF28ACD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DDC97CEE-EAD2-46BA-A90E-F1040CF28ACD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DDC97CEE-EAD2-46BA-A90E-F1040CF28ACD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AD59D3C6-FB6F-4F6D-BE39-BC2E7FB01FB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AD59D3C6-FB6F-4F6D-BE39-BC2E7FB01FB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD59D3C6-FB6F-4F6D-BE39-BC2E7FB01FB8}.Release|Any CPU.ActiveCfg = Release|Any CPU

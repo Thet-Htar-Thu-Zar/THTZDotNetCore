@@ -34,7 +34,7 @@ namespace THTZDotNetCore.Shared
             return dt;
         }
 
-        public int Excute (string query, params SqlParameterModel[] sqlParameters)
+        public int Execute (string query, params SqlParameterModel[] sqlParameters)
         {
             SqlConnection connection = new SqlConnection ( _connectionString);
             connection.Open();
@@ -60,7 +60,6 @@ namespace THTZDotNetCore.Shared
         public string Name { get; set; }
 
         public object Value { get; set; }
-
         public SqlParameterModel() { }
         public SqlParameterModel(string name, object value)
         {
