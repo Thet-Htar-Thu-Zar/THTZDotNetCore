@@ -110,7 +110,6 @@ namespace THTZDotNetCore.ConsoleApp
             connection.Close();
 
             Console.WriteLine(result == 1 ? "Saving Successful." : "Saving Fail.");
-
             
         }
 
