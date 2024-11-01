@@ -121,6 +121,9 @@ namespace THTZDotNetCore.ConsoleApp
             Console.WriteLine(result == 1 ? "Updating Successful." : "Updating Fail.");
         }
 
-        
+        public void Delete()
+        {
+
+        }
     }
 }
