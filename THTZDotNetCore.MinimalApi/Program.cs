@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Reflection.Metadata;
 using THTZDotNetCore.Database.Models;
+using THTZDotNetCore.MinimalApi.Endpoints.Blog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -40,109 +41,114 @@ app.UseHttpsRedirection();
 //.WithName("GetWeatherForecast")
 //.WithOpenApi();
 
-app.MapGet("/blogs", () =>
-{
-    AppDbContext db = new AppDbContext();
-    var model = db.TblBlogs.AsNoTracking().ToList();
-    return Results.Ok(model);
-})
-.WithName("GetBlogs")
-.WithOpenApi();
+//app.MapGet("/blogs", () =>
+//{
+//    AppDbContext db = new AppDbContext();
+//    var model = db.TblBlogs.AsNoTracking().ToList();
+//    return Results.Ok(model);
+//})
+//.WithName("GetBlogs")
+//.WithOpenApi();
 
-app.MapGet("/blogs/{id}", (int id) =>
-{
-    AppDbContext db = new AppDbContext();
-    var item = db.TblBlogs.AsNoTracking().FirstOrDefault(x => x.BlogId == id);
+//app.MapGet("/blogs/{id}", (int id) =>
+//{
+//    AppDbContext db = new AppDbContext();
+//    var item = db.TblBlogs.AsNoTracking().FirstOrDefault(x => x.BlogId == id);
 
-    if (item is null)
-    {
-        return Results.BadRequest("No data found.");
-    }
-    return Results.Ok(item);
-})
-.WithName("GetBlog")
-.WithOpenApi();
+//    if (item is null)
+//    {
+//        return Results.BadRequest("No data found.");
+//    }
+//    return Results.Ok(item);
+//})
+//.WithName("GetBlog")
+//.WithOpenApi();
 
-app.MapPost("/blogs", (TblBlog blog) =>
-{
-    AppDbContext db = new AppDbContext();
-    db.TblBlogs.Add(blog);
-    db.SaveChanges();
-    return Results.Ok(blog);
-})
-.WithName("CreateBlog")
-.WithOpenApi();
+//app.MapPost("/blogs", (TblBlog blog) =>
+//{
+//    AppDbContext db = new AppDbContext();
+//    db.TblBlogs.Add(blog);
+//    db.SaveChanges();
+//    return Results.Ok(blog);
+//})
+//.WithName("CreateBlog")
+//.WithOpenApi();
 
-app.MapPut("/blogs", (int id,TblBlog blog) =>
-{
-    AppDbContext db = new AppDbContext();
-    var item = db.TblBlogs.AsNoTracking().FirstOrDefault(x => x.BlogId == id);
+//app.MapPut("/blogs", (int id, TblBlog blog) =>
+//{
+//    AppDbContext db = new AppDbContext();
+//    var item = db.TblBlogs.AsNoTracking().FirstOrDefault(x => x.BlogId == id);
 
-    if(item is null)
-    {
-        return Results.BadRequest("No data found.");
-    }
+//    if (item is null)
+//    {
+//        return Results.BadRequest("No data found.");
+//    }
 
-    item.BlogTitle = blog.BlogTitle;
-    item.BlogAuthor = blog.BlogAuthor;
-    item.BlogContent = blog.BlogContent;
+//    item.BlogTitle = blog.BlogTitle;
+//    item.BlogAuthor = blog.BlogAuthor;
+//    item.BlogContent = blog.BlogContent;
 
-    db.Entry(item).State = EntityState.Modified;
+//    db.Entry(item).State = EntityState.Modified;
 
-    db.SaveChanges();
-    return Results.Ok(blog);
-})
-.WithName("UpdateBlogs")
-.WithOpenApi();
+//    db.SaveChanges();
+//    return Results.Ok(blog);
+//})
+//.WithName("UpdateBlogs")
+//.WithOpenApi();
 
-app.MapPatch("/blogs", (int id, TblBlog blog) =>
-{
-    AppDbContext db = new AppDbContext();
-    var item = db.TblBlogs.AsNoTracking().FirstOrDefault(x => x.BlogId == id);
+//app.MapPatch("/blogs", (int id, TblBlog blog) =>
+//{
+//    AppDbContext db = new AppDbContext();
+//    var item = db.TblBlogs.AsNoTracking().FirstOrDefault(x => x.BlogId == id);
 
-    if (item is null)
-    {
-        return Results.BadRequest("No data found.");
-    }
+//    if (item is null)
+//    {
+//        return Results.BadRequest("No data found.");
+//    }
 
-    if (!string.IsNullOrEmpty(blog.BlogTitle))
-    {
-        item.BlogTitle = blog.BlogTitle;
-    }
-    if (!string.IsNullOrEmpty(blog.BlogAuthor))
-    {
-        item.BlogAuthor = blog.BlogAuthor;
-    }
-    if (!string.IsNullOrEmpty(blog.BlogContent))
-    {
-        item.BlogContent = blog.BlogContent;
-    }
+//    if (!string.IsNullOrEmpty(blog.BlogTitle))
+//    {
+//        item.BlogTitle = blog.BlogTitle;
+//    }
+//    if (!string.IsNullOrEmpty(blog.BlogAuthor))
+//    {
+//        item.BlogAuthor = blog.BlogAuthor;
+//    }
+//    if (!string.IsNullOrEmpty(blog.BlogContent))
+//    {
+//        item.BlogContent = blog.BlogContent;
+//    }
 
-    db.Entry(item).State = EntityState.Modified;
+//    db.Entry(item).State = EntityState.Modified;
 
-    db.SaveChanges();
-    return Results.Ok(blog);
-})
-.WithName("UpdateBlog")
-.WithOpenApi();
+//    db.SaveChanges();
+//    return Results.Ok(blog);
+//})
+//.WithName("UpdateBlog")
+//.WithOpenApi();
 
-app.MapDelete("/blogs/{id}", (int id) =>
-{
-    AppDbContext db = new AppDbContext();
-    var item = db.TblBlogs.AsNoTracking().FirstOrDefault(x => x.BlogId == id);
+//app.MapDelete("/blogs/{id}", (int id) =>
+//{
+//    AppDbContext db = new AppDbContext();
+//    var item = db.TblBlogs.AsNoTracking().FirstOrDefault(x => x.BlogId == id);
 
-    if (item is null)
-    {
-        return Results.BadRequest("No data found.");
-    }
+//    if (item is null)
+//    {
+//        return Results.BadRequest("No data found.");
+//    }
 
-    db.Entry(item).State = EntityState.Deleted;
+//    db.Entry(item).State = EntityState.Deleted;
 
-    db.SaveChanges();
-    return Results.Ok();
-})
-.WithName("DeleteBlog")
-.WithOpenApi();
+//    db.SaveChanges();
+//    return Results.Ok();
+//})
+//.WithName("DeleteBlog")
+//.WithOpenApi();
+
+//BlogEndpoint.Test(9);
+//9.Test();
+
+app.UseBlogEndpoint();
 
 app.Run();
 
