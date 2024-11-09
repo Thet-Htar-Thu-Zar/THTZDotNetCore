@@ -38,7 +38,7 @@ app.MapGet("/weatherforecast", () =>
 .WithName("GetWeatherForecast")
 .WithOpenApi();
 
-app.MapGet("/baganmap", () =>
+app.MapGet("/baganmapInfo", () =>
 {
     string folderPath = "Data/BaganMap.json";
     var jsonStr = File.ReadAllText(folderPath);
@@ -48,7 +48,7 @@ app.MapGet("/baganmap", () =>
 .WithName("GetBaganMapInfoData")
 .WithOpenApi();
 
-app.MapGet("/baganmap/{id}", (string id) =>
+app.MapGet("/baganmapInfo/{id}", (string id) =>
 {
     string folderPath = "Data/BaganMap.json";
     var jsonStr = File.ReadAllText(folderPath);
@@ -72,12 +72,10 @@ internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 }
 
-
 public class BaganMapResponseModel
 {
     public BaganmapinfodataModel[] Tbl_BaganMapInfoData { get; set; }
-    public BaganmapinfodetaildataModel[] Tbl_BaganMapInfoDetailData { get; set; }
-    public TravelroutelistdataModel[] Tbl_TravelRouteListData { get; set; }
+    
 }
 
 public class BaganmapinfodataModel
@@ -89,17 +87,5 @@ public class BaganmapinfodataModel
     public float Longitude { get; set; }
 }
 
-public class BaganmapinfodetaildataModel
-{
-    public string Id { get; set; }
-    public string Description { get; set; }
-}
 
-public class TravelroutelistdataModel
-{
-    public string TravelRouteId { get; set; }
-    public string TravelRouteName { get; set; }
-    public string TravelRouteDescription { get; set; }
-    public string[] PagodaList { get; set; }
-}
 
