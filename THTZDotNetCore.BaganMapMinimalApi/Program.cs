@@ -48,7 +48,7 @@ app.MapGet("/baganmap", () =>
 .WithName("GetBaganMapInfoData")
 .WithOpenApi();
 
-app.MapGet("/baganmap/{id}", (int id) =>
+app.MapGet("/baganmap/{id}", (string id) =>
 {
     string folderPath = "Data/BaganMap.json";
     var jsonStr = File.ReadAllText(folderPath);
