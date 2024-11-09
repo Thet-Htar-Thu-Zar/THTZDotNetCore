@@ -18,7 +18,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THTZDotNetCore.ToDoListRest
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THTZDotNetCore.Shared", "THTZDotNetCore.Shared\THTZDotNetCore.Shared.csproj", "{022597F2-8E04-4284-BCF2-66662353CA47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "THTZDotNetCore.ConsoleApp", "THTZDotNetCore.ConsoleApp\THTZDotNetCore.ConsoleApp.csproj", "{50CDA240-BC54-41DC-A7B0-4BADB8AD2E2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THTZDotNetCore.ConsoleApp", "THTZDotNetCore.ConsoleApp\THTZDotNetCore.ConsoleApp.csproj", "{50CDA240-BC54-41DC-A7B0-4BADB8AD2E2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "THTZDotNetCore.MinimalApi", "THTZDotNetCore.MinimalApi\THTZDotNetCore.MinimalApi.csproj", "{421F7293-0A97-48D4-95B3-69E2E1EB6AE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +52,10 @@ Global
 		{50CDA240-BC54-41DC-A7B0-4BADB8AD2E2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50CDA240-BC54-41DC-A7B0-4BADB8AD2E2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50CDA240-BC54-41DC-A7B0-4BADB8AD2E2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{421F7293-0A97-48D4-95B3-69E2E1EB6AE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{421F7293-0A97-48D4-95B3-69E2E1EB6AE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{421F7293-0A97-48D4-95B3-69E2E1EB6AE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{421F7293-0A97-48D4-95B3-69E2E1EB6AE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
