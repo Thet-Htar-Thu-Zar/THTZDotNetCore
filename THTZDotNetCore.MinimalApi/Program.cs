@@ -47,7 +47,6 @@ app.MapGet("/blogs", () =>
 });
 
 
-
 app.Run();
 
 //internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
