@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace THTZDotNetCore.MiniKpayDatabase.Models
 {
-    internal class TblDeposit
+    public class TblDeposit
     {
+        public int DepositId { get; set; }
+        public string MobileNumber { get; set; }
+        public decimal Balance { get; set; }
+        public bool DeleteFlag { get; set; }
     }
 }
