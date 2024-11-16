@@ -34,7 +34,7 @@ namespace THTZDotNetCore.MiniKpayRestApi.Controllers
         {
             _db.TblUsers.Add(user);
             _db.SaveChanges();
-            return Ok(user);
+            return Ok("Account Creating Successful.");
         }
 
         [HttpPut("{id}")]
@@ -56,7 +56,7 @@ namespace THTZDotNetCore.MiniKpayRestApi.Controllers
             _db.Entry(item).State = EntityState.Modified;
             _db.SaveChanges();
 
-            return Ok(item);
+            return Ok("Account Updating Successful");
         }
 
         //[HttpPatch("{id}")]

@@ -40,7 +40,7 @@ namespace THTZDotNetCore.MiniKpayDatabase.Models
                 entity.Property(e => e.Balance).HasColumnType("decimal(18,2)");
                 entity.Property(e => e.Pin).HasMaxLength(50);
                 entity.Property(e => e.CreatedDate).HasMaxLength(10);
-
+               
             });
 
             modelBuilder.Entity<TblDeposit>(entity =>
@@ -51,7 +51,7 @@ namespace THTZDotNetCore.MiniKpayDatabase.Models
 
                 entity.Property(e => e.MobileNumber).HasMaxLength(20);
                 entity.Property(e => e.Balance).HasColumnType("decimal(18,2)");
-
+               
             });
 
             modelBuilder.Entity<TblWithdraw>(entity =>
@@ -62,7 +62,7 @@ namespace THTZDotNetCore.MiniKpayDatabase.Models
 
                 entity.Property(e => e.MobileNumber).HasMaxLength(20);
                 entity.Property(e => e.Balance).HasColumnType("decimal(18,2)");
-              
+               
             });
 
             modelBuilder.Entity<TblTransfer>(entity =>
@@ -75,7 +75,7 @@ namespace THTZDotNetCore.MiniKpayDatabase.Models
                 entity.Property(e => e.ToMobileNumber).HasMaxLength(50);
                 entity.Property(e => e.Amount).HasColumnType("decimal(18,2)");
                 entity.Property(e => e.Pin).HasMaxLength(50);
-
+                
             });
 
             OnModelCreatingPartial(modelBuilder);
