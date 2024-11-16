@@ -7,5 +7,6 @@ namespace THTZDotNetCore.MiniKpayRestApi.Controllers
     [ApiController]
     public class BankAccountController : ControllerBase
     {
+
     }
 }
