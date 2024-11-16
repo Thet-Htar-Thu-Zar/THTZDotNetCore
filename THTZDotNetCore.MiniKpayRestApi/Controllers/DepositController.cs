@@ -13,9 +13,7 @@ namespace THTZDotNetCore.MiniKpayRestApi.Controllers
         [HttpGet]
         public IActionResult GetDeposits()
         {
-            var lst = _db.TblDeposits
-                    .Where(d => !d.DeleteFlag) 
-                    .ToList();
+            var lst = _db.TblDeposits.Where(d => !d.DeleteFlag).ToList();
 
             return Ok(lst);
         }
