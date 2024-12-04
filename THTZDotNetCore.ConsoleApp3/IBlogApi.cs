@@ -10,8 +10,10 @@ namespace THTZDotNetCore.ConsoleApp3
         [Get("/api/blogs/{id}")]
         Task<BlogModel> GetBlog(int id);
 
-        //[Post("/api/blogs")]
-        //Task<List<BlogModel>> CreateBlog(BlogModel blogModel);
+        [Post("/api/blogs")]
+        Task<BlogModel> CreateBlog(BlogModel blogModel);
+
+        []
     }
 
     public class BlogModel

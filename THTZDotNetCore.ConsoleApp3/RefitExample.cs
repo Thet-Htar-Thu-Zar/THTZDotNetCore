@@ -12,6 +12,29 @@ namespace THTZDotNetCore.ConsoleApp3
             {
                 Console.WriteLine(item.BlogTitle);
             }
+
+            var item2 = await blogApi.GetBlog(2);
+
+            try
+            {
+                var item1 = await blogApi.GetBlog(1);
+
+            }
+            catch(ApiException ex)
+            {
+                if(ex.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    Console.WriteLine("No data found.");
+                }
+            }
+
+            var item3 = await blogApi.CreateBlog(new BlogModel
+            {
+                BlogTitle = "test",
+                BlogAuthor = "test",
+                BlogContent = "test",
+
+            });
         }
     }
 }
