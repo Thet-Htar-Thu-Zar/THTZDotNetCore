@@ -4,8 +4,14 @@ namespace THTZDotNetCore.ConsoleApp3
 {
     public interface IBlogApi
     {
-        [Get("/api/{blogs}")]
+        [Get("/api/blogs")]
         Task<List<BlogModel>> GetBlogs();
+
+        [Get("/api/blogs/{id}")]
+        Task<List<BlogModel>> GetBlog();
+
+        [Post("/api/blogs")]
+        Task<List<BlogModel>> CreateBlog(BlogModel blogModel);
     }
 
     public class BlogModel
