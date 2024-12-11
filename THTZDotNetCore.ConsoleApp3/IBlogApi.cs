@@ -13,7 +13,6 @@ namespace THTZDotNetCore.ConsoleApp3
         [Post("/api/blogs")]
         Task<BlogModel> CreateBlog(BlogModel blogModel);
 
-        []
     }
 
     public class BlogModel
