@@ -30,7 +30,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THTZDotNetCore.MiniKpayData
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THTZDotNetCore.ConsoleApp3", "THTZDotNetCore.ConsoleApp3\THTZDotNetCore.ConsoleApp3.csproj", "{3A783201-8F6F-4CFB-A9DD-38D5AE37E707}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "THTZDotNetCore.RestApi2", "THTZDotNetCore.RestApi2\THTZDotNetCore.RestApi2.csproj", "{6F1775AA-52A1-44B3-8484-669BDB9E1B9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THTZDotNetCore.RestApi2", "THTZDotNetCore.RestApi2\THTZDotNetCore.RestApi2.csproj", "{6F1775AA-52A1-44B3-8484-669BDB9E1B9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "THTZDotNetCore.RestApi3", "THTZDotNetCore.RestApi3\THTZDotNetCore.RestApi3.csproj", "{77D861AE-CAFC-47C0-A445-C2D065A8F6CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -86,6 +88,10 @@ Global
 		{6F1775AA-52A1-44B3-8484-669BDB9E1B9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F1775AA-52A1-44B3-8484-669BDB9E1B9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F1775AA-52A1-44B3-8484-669BDB9E1B9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77D861AE-CAFC-47C0-A445-C2D065A8F6CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77D861AE-CAFC-47C0-A445-C2D065A8F6CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77D861AE-CAFC-47C0-A445-C2D065A8F6CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77D861AE-CAFC-47C0-A445-C2D065A8F6CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
