@@ -7,5 +7,6 @@ namespace THTZDotNetCore.RestApi3.Controllers
     [ApiController]
     public class BurmeseProjectIdeaController : ControllerBase
     {
+
     }
 }
