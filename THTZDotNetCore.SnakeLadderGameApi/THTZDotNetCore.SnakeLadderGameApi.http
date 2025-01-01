@@ -1,0 +1,6 @@
+@THTZDotNetCore.SnakeLadderGameApi_HostAddress = http://localhost:5068
+
+GET {{THTZDotNetCore.SnakeLadderGameApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

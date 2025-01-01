@@ -32,7 +32,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THTZDotNetCore.ConsoleApp3"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THTZDotNetCore.RestApi2", "THTZDotNetCore.RestApi2\THTZDotNetCore.RestApi2.csproj", "{6F1775AA-52A1-44B3-8484-669BDB9E1B9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "THTZDotNetCore.RestApi3", "THTZDotNetCore.RestApi3\THTZDotNetCore.RestApi3.csproj", "{77D861AE-CAFC-47C0-A445-C2D065A8F6CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THTZDotNetCore.RestApi3", "THTZDotNetCore.RestApi3\THTZDotNetCore.RestApi3.csproj", "{77D861AE-CAFC-47C0-A445-C2D065A8F6CF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SnakeLadderGame", "SnakeLadderGame", "{B2EFF345-3278-4083-AAAC-B123FED46CAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "THTZDotNetCore.SnakeLadderGameApi", "THTZDotNetCore.SnakeLadderGameApi\THTZDotNetCore.SnakeLadderGameApi.csproj", "{E3967C6E-0AC4-418E-9E9E-2FB919F87108}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "THTZDotNetCore.SnakeLadderGameDomain", "THTZDotNetCore.SnakeLadderGameDomain\THTZDotNetCore.SnakeLadderGameDomain.csproj", "{C7EBC3F2-C98A-46CE-8F06-6A3F79AEBE0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "THTZDotNetCore.SnakeLadderGameDatabase", "THTZDotNetCore.SnakeLadderGameDatabase\THTZDotNetCore.SnakeLadderGameDatabase.csproj", "{0D17AB16-925E-411A-A697-D92566FFA8CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -92,9 +100,26 @@ Global
 		{77D861AE-CAFC-47C0-A445-C2D065A8F6CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77D861AE-CAFC-47C0-A445-C2D065A8F6CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77D861AE-CAFC-47C0-A445-C2D065A8F6CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3967C6E-0AC4-418E-9E9E-2FB919F87108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3967C6E-0AC4-418E-9E9E-2FB919F87108}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3967C6E-0AC4-418E-9E9E-2FB919F87108}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3967C6E-0AC4-418E-9E9E-2FB919F87108}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7EBC3F2-C98A-46CE-8F06-6A3F79AEBE0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7EBC3F2-C98A-46CE-8F06-6A3F79AEBE0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7EBC3F2-C98A-46CE-8F06-6A3F79AEBE0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7EBC3F2-C98A-46CE-8F06-6A3F79AEBE0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D17AB16-925E-411A-A697-D92566FFA8CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D17AB16-925E-411A-A697-D92566FFA8CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D17AB16-925E-411A-A697-D92566FFA8CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D17AB16-925E-411A-A697-D92566FFA8CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E3967C6E-0AC4-418E-9E9E-2FB919F87108} = {B2EFF345-3278-4083-AAAC-B123FED46CAD}
+		{C7EBC3F2-C98A-46CE-8F06-6A3F79AEBE0E} = {B2EFF345-3278-4083-AAAC-B123FED46CAD}
+		{0D17AB16-925E-411A-A697-D92566FFA8CF} = {B2EFF345-3278-4083-AAAC-B123FED46CAD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D630531C-78E3-4588-85F5-1974FA71F4E7}
