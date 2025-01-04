@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\THTZDotNetCore.Database\THTZDotNetCore.Database.csproj" />
+    <ProjectReference Include="..\THTZDotNetCore.MiniKpayRestApi\THTZDotNetCore.MiniKpayRestApi.csproj" />
   </ItemGroup>
 
 </Project>
