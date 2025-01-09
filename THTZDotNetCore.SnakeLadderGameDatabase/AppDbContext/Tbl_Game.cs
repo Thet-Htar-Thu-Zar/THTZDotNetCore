@@ -6,9 +6,9 @@ namespace THTZDotNetCore.SnakeLadderGameDatabase.AppDbContext
     {
         [Key]
         public int GameId { get; set; }
-        public string? GameCode { get; set; }
+        public string GameCode { get; set; }
         public DateTime StartTime { get; set; } = DateTime.UtcNow;
         public DateTime EndTime { get; set; } = DateTime.UtcNow;
-        public int WinnerID { get; set; }
+        public int? WinnerID { get; set; }
     }
 }
