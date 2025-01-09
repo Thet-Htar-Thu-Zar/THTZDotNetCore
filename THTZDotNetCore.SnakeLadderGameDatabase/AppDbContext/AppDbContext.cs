@@ -8,7 +8,6 @@ namespace THTZDotNetCore.SnakeLadderGameDatabase.AppDbContext
         {
 
         }
-
         public virtual DbSet<Tbl_Game> TblGames { get; set; }
 
         public virtual DbSet<Tbl_GamePlay> TblGamePlays { get; set; }
