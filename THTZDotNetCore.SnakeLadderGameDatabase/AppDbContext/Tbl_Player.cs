@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace THTZDotNetCore.SnakeLadderGameDatabase.AppDbContext
+﻿namespace THTZDotNetCore.SnakeLadderGameDatabase.AppDbContext
 {
     public class Tbl_Player
     {
+        public int PlayerId { get; set; }
+        public string PlayerName { get; set; }
+        public int CurrentPosition { get; set; }
     }
 }
