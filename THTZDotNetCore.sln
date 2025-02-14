@@ -36,11 +36,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THTZDotNetCore.RestApi3", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SnakeLadderGame", "SnakeLadderGame", "{B2EFF345-3278-4083-AAAC-B123FED46CAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "THTZDotNetCore.SnakeLadderGameApi", "THTZDotNetCore.SnakeLadderGameApi\THTZDotNetCore.SnakeLadderGameApi.csproj", "{E3967C6E-0AC4-418E-9E9E-2FB919F87108}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THTZDotNetCore.SnakeLadderGameApi", "THTZDotNetCore.SnakeLadderGameApi\THTZDotNetCore.SnakeLadderGameApi.csproj", "{E3967C6E-0AC4-418E-9E9E-2FB919F87108}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "THTZDotNetCore.SnakeLadderGameDomain", "THTZDotNetCore.SnakeLadderGameDomain\THTZDotNetCore.SnakeLadderGameDomain.csproj", "{C7EBC3F2-C98A-46CE-8F06-6A3F79AEBE0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THTZDotNetCore.SnakeLadderGameDomain", "THTZDotNetCore.SnakeLadderGameDomain\THTZDotNetCore.SnakeLadderGameDomain.csproj", "{C7EBC3F2-C98A-46CE-8F06-6A3F79AEBE0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "THTZDotNetCore.SnakeLadderGameDatabase", "THTZDotNetCore.SnakeLadderGameDatabase\THTZDotNetCore.SnakeLadderGameDatabase.csproj", "{0D17AB16-925E-411A-A697-D92566FFA8CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THTZDotNetCore.SnakeLadderGameDatabase", "THTZDotNetCore.SnakeLadderGameDatabase\THTZDotNetCore.SnakeLadderGameDatabase.csproj", "{0D17AB16-925E-411A-A697-D92566FFA8CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "THTZDotNetCore.ChartWebApp", "THTZDotNetCore.ChartWebApp\THTZDotNetCore.ChartWebApp.csproj", "{7AC8E55F-A9F6-4025-88DB-2FF69CD16D38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -112,6 +114,10 @@ Global
 		{0D17AB16-925E-411A-A697-D92566FFA8CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D17AB16-925E-411A-A697-D92566FFA8CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D17AB16-925E-411A-A697-D92566FFA8CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AC8E55F-A9F6-4025-88DB-2FF69CD16D38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AC8E55F-A9F6-4025-88DB-2FF69CD16D38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AC8E55F-A9F6-4025-88DB-2FF69CD16D38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AC8E55F-A9F6-4025-88DB-2FF69CD16D38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
